@@ -7,3 +7,6 @@ dist
 media/*
 yarn-error.log
 tsconfig.tsbuildinfo
+
+# internal notes
+notes.md
