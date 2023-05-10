@@ -25,6 +25,7 @@
     "dotenv": "^16.0.0",
     "escape-html": "^1.0.3",
     "express": "^4.18.0",
+    "jss-global": "^3.0.0",
     "next": "^13.2.3",
     "payload": "^1.7.4",
     "react": "^18.2.0",
