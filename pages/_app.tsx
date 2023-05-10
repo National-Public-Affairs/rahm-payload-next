@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import App from 'next/app';
-// import { ModalProvider } from '@faceless-ui/modal';
-// import { GridProvider } from '@faceless-ui/css-grid';
-// import { WindowInfoProvider } from '@faceless-ui/window-info';
+import { ModalProvider } from '@faceless-ui/modal';
+import { GridProvider } from '@faceless-ui/css-grid';
+import { WindowInfoProvider } from '@faceless-ui/window-info';
 // import Header from '../components/layout/Header';
 // import useStyles from '../css/app';
 // import zIndex from '../css/zIndex';
