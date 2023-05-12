@@ -3,8 +3,7 @@ import colors from '../../css/colors';
 
 const Logo: React.FC = () => (
   <svg
-    width="235.36"
-    height="150"
+    width="100%"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 612 390.04"
     xmlSpace="preserve"
