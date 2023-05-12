@@ -1,22 +1,32 @@
 import React from 'react';
 import Link from 'next/link';
+import { useModal } from '@faceless-ui/modal';
 import { Props } from './types';
 import Logo from '../../graphics/Logo';
+import Hamburger from './Hamburger';
 import useStyles from './css';
 
+const menuSlug = 'menu';
+
 const Header: React.FC = () => {
-  const classes = useStyles();
+  const { isModalOpen, toggleModal } = useModal();
+  const menuActive = isModalOpen('menu');
+  const classes = useStyles({ menuActive });
+
   return (
     <header className={classes.header}>
       <Link
         href="/"
-        className={classes.logo}
       >
-        <Logo />
+        <Logo className={classes.logo} />
       </Link>
-      <div>
-        Menu
-      </div>
+      <button
+        type="button"
+        className={classes.menuButton}
+        onClick={() => toggleModal(menuSlug)}
+      >
+        <Hamburger active={menuActive} />
+      </button>
     </header>
   );
 };
