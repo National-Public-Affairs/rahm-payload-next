@@ -6,8 +6,9 @@ export default createUseStyles({
     padding: base(2),
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   logo: {
-    width: base(5),
+    
   },
 });
