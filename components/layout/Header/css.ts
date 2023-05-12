@@ -7,4 +7,7 @@ export default createUseStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  logo: {
+    width: base(5),
+  },
 });
