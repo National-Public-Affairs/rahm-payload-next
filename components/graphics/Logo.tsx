@@ -3,16 +3,13 @@ import colors from '../../css/colors';
 
 const Logo: React.FC = () => (
   <svg
-    width="612"
-    height="390.04"
+    width="235.36"
+    height="150"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 612 390.04"
     xmlSpace="preserve"
     enableBackground="new 0 0 612 390.04"
   >
-    {/* <style type="text/css">
-      .st2{{ fill: colors.white }}
-    </style> */}
     <rect
       id="XMLID_00000062896022287137478890000015573255980750334351_"
       x="27.3"
