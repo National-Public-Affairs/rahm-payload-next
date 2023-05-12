@@ -9,6 +9,10 @@ export default createUseStyles({
     alignItems: 'center',
   },
   logo: {
+    height: base(8),
+    width: `${(parseInt(base(8), 10) * 1.569)}rem`,
+  },
+  menuButton: {
     
   },
 });
