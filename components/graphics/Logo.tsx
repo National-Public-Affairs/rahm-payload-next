@@ -1,7 +1,11 @@
 import React from 'react';
 import colors from '../../css/colors';
 
-const Logo: React.FC = () => (
+type Props = {
+  className?: string;
+}
+
+const Logo: React.FC<Props> = ({ className }) => (
   <svg
     width="235.56"
     height="150"
@@ -9,6 +13,7 @@ const Logo: React.FC = () => (
     viewBox="0 0 612 390.04"
     xmlSpace="preserve"
     enableBackground="new 0 0 612 390.04"
+    className={className}
   >
     <rect
       id="XMLID_00000062896022287137478890000015573255980750334351_"
