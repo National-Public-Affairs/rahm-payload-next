@@ -3,7 +3,6 @@ import { ModalContainer, ModalProvider } from '@faceless-ui/modal';
 import { WindowInfoProvider } from '@faceless-ui/window-info';
 import { GridProvider } from '@faceless-ui/css-grid';
 import App from 'next/app';
-
 import Header from '../components/layout/Header';
 import useStyles from '../css/app';
 import zIndex from '../css/zIndex';
@@ -12,6 +11,7 @@ import { base } from '../css/base';
 import { Type as MegaMenuType } from '../globals/MegaMenu';
 import { Type as FooterType } from '../globals/Footer';
 import { Type as SocialMediaType } from '../globals/SocialMedia';
+import '../css/style.css';
 
 type AppProps = {
   pageProps: unknown;

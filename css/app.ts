@@ -3,6 +3,7 @@ import { htmlFontSize, baselinePX, base } from './base';
 import colors from './colors';
 import { h1, h2, h3, h4, h5, body } from './type';
 import queries from './queries';
+import { headerHeight } from './sizes';
 
 export default createUseStyles({
   '@global': {
@@ -14,7 +15,7 @@ export default createUseStyles({
       boxSizing: 'border-box',
     },
     html: {
-      fontFamily: 'system-ui, Helvetica Neue, Helvetica, Arial, sans-serif',
+      fontFamily: 'freight-sans-compressed-pro, system-ui, Helvetica Neue, Helvetica, Arial, sans-serif',
       fontSize: htmlFontSize,
       lineHeight: `${baselinePX}px`,
       backgroundColor: colors.darkPurple,
@@ -44,5 +45,6 @@ export default createUseStyles({
   },
   app: {
     height: '100%',
+    marginTop: headerHeight,
   },
 });
