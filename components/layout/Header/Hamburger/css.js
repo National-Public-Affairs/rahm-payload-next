@@ -2,20 +2,17 @@ import { createUseStyles } from 'react-jss';
 import { base } from '../../../../css/base';
 import colors from '../../../../css/colors';
 
-interface CustomTheme {
-  active: boolean;
-}
-
 const generateLineStyles = (styles) => ({
   transition: 'all 400ms',
   transformOrigin: 'center',
   stroke: colors.white,
   strokeWidth: '2px',
+  strokeLinecap: 'round',
   vectorEffect: 'non-scaling-stroke',
   ...styles,
 });
 
-export default createUseStyles<CustomTheme>({
+export default createUseStyles({
   hamburger: {
     overflow: 'visible',
     width: base(),

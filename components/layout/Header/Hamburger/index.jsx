@@ -1,18 +1,9 @@
 import React from 'react';
 import useStyles from './css';
-import { useTheme } from 'react-jss';
 
-type Props = {
-  active: boolean;
-}
-
-interface CustomTheme {
-  active: boolean;
-}
-
-const Hamburger: React.FC<Props> = ({ active }) => {
-  const theme = useTheme<CustomTheme>();
-  const classes = useStyles({ theme, active });
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+const Hamburger = ({ active }) => {
+  const classes = useStyles({ active });
 
   return (
     <svg

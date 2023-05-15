@@ -26,7 +26,7 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.js"
-, "pages/_document.js"  ],
+, "pages/_document.js", "components/layout/Header/Hamburger/index.jsx", "components/layout/Header/Hamburger/css.js", "components/layout/Header/index.jsx", "components/layout/Header/css.js"  ],
   "exclude": [
     "node_modules"
   ],

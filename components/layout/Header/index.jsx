@@ -1,14 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { useModal } from '@faceless-ui/modal';
-import { Props } from './types';
 import Logo from '../../graphics/Logo';
 import Hamburger from './Hamburger';
 import useStyles from './css';
 
 const menuSlug = 'menu';
 
-const Header: React.FC = () => {
+const Header = () => {
   const { isModalOpen, toggleModal } = useModal();
   const menuActive = isModalOpen('menu');
   const classes = useStyles({ menuActive });
