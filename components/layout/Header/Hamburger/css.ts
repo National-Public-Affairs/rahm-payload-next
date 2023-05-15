@@ -1,17 +1,36 @@
 import { createUseStyles } from 'react-jss';
+import { base } from '../../../../css/base';
 import colors from '../../../../css/colors';
 
+const generateLineStyles = (styles) => ({
+  transition: 'all 400ms',
+  transformOrigin: 'center',
+  stroke: colors.white,
+  strokeWidth: '2px',
+  vectorEffect: 'non-scaling-stroke',
+  ...styles,
+});
+
 export default createUseStyles({
-  line1: {
-    stroke: colors.darkPurple,
+  hamburger: {
+    overflow: 'visible',
+    width: base(),
+    height: base(),
   },
-  line2: {
-    stroke: colors.darkPurple,
-  },
-  line3: {
-    stroke: colors.darkPurple,
-  },
-  line4: {
-    stroke: colors.darkPurple,
-  },
+  line1: ({ active }) => ({
+    opacity: active ? 0 : undefined,
+    transform: active ? `translate(0, ${base(-0.5)})` : undefined,
+  }),
+  line2: ({ active }) => generateLineStyles({
+    opacity: 1,
+    transform: active ? 'rotate(45deg)' : undefined,
+  }),
+  line3: ({ active }) => ({
+    opacity: active ? 1 : 0,
+    transform: active ? 'rotate(-45deg)' : undefined,
+  }),
+  line4: ({ active }) => ({
+    opacity: active ? 0 : undefined,
+    transform: active ? `translate(0, ${base(0.5)})` : undefined,
+  }),
 });
