@@ -14,23 +14,28 @@ const Hamburger: React.FC<Props> = ({ active }) => {
       viewBox="0 0 30 24"
       width="30"
       height="30"
+      className={classes.hamburger}
     >
+      {/* up and out */}
       <line
         className={classes.line1}
         x2="30"
       />
+      {/* rotate */}
       <line
         className={classes.line2}
         y1="12"
         x2="30"
         y2="12"
       />
+      {/* rotate */}
       <line
         className={classes.line3}
         y1="12"
         x2="30"
         y2="12"
       />
+      {/* down and out */}
       <line
         className={classes.line4}
         y1="24"
