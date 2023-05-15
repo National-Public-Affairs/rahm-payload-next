@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import color from 'color';
 import { base } from '../../../css/base';
+import { strokeWidth, headerHeight } from '../../../css/sizes';
 import colors from '../../../css/colors';
 
 export default createUseStyles({
@@ -17,7 +18,7 @@ export default createUseStyles({
   },
   menuButton: ({ menuActive }) => ({
     pointerEvents: 'all',
-    background: colors.yellow,
+    background: menuActive ? colors.yellow : colors.darkPurple,
     transition: 'all 200ms linear',
     width: base(3),
     height: base(3),
@@ -26,11 +27,15 @@ export default createUseStyles({
     justifyContent: 'center',
     border: 0,
     borderRadius: '100%',
-    boxShadow: `inset 0 0 0 ${3} ${menuActive ? colors.white : colors.darkPurple}`,
+    boxShadow: `inset 0 0 0 ${strokeWidth} ${menuActive ? colors.white : colors.purple}`,
     cursor: 'pointer',
-    '&:focus': {
-      outline: 'none',
-      background: color
-    },
+    // '&:focus': {
+    //   outline: 'none',
+    //   background: color(colors.purple).lighten(0.8).hex(),
+    // },
+    // '&:active': {
+    //   outline: 'none',
+    //   background: color(colors.yellow).lighten(1.2).hex(),
+    // },
   }),
 });
