@@ -1,5 +1,4 @@
 import { createUseStyles } from 'react-jss';
-import color from 'color';
 import { base } from '../../../css/base';
 import colors from '../../../css/colors';
 import { headerHeight, strokeWidth } from '../../../css/sizes';
@@ -9,9 +8,10 @@ import transitions from '../../../css/transitions';
 
 export default createUseStyles({
   header: {
-    padding: base(2),
+    padding: `${base(1)} ${base(2)}`,
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
     zIndex: zIndex.header,
     position: 'fixed',
     top: 0,
@@ -33,7 +33,7 @@ export default createUseStyles({
   },
   menuButton: ({ menuActive }) => ({
     pointerEvents: 'all',
-    background: colors.gray,
+    background: menuActive ? colors.purple : colors.yellow,
     transition: 'all 200ms linear',
     width: base(3),
     height: base(3),
@@ -42,19 +42,19 @@ export default createUseStyles({
     justifyContent: 'center',
     borderRadius: '100%',
     border: 0,
-    boxShadow: `inset 0 0 0 ${strokeWidth} ${menuActive ? colors.antique : colors.gray}`,
+    boxShadow: `inset 0 0 0 ${menuActive ? strokeWidth : '0px'} ${menuActive ? colors.purple : colors.darkPurple}`,
     cursor: 'pointer',
-    '&:focus': {
-      outline: 'none',
-      background: color(colors.gray).lighten(0.8).hex(),
-    },
-    '&:active': {
-      outline: 'none',
-      background: color(colors.gray).lighten(1.2).hex(),
-    },
+    // '&:focus': {
+    //   outline: 'none',
+    //   background: color(colors.gray).lighten(0.8).hex(),
+    // },
+    // '&:active': {
+    //   outline: 'none',
+    //   background: color(colors.gray).lighten(1.2).hex(),
+    // },
   }),
   menu: {
-    background: colors.gray,
+    background: colors.yellow,
     position: 'relative',
     padding: `${headerHeight} 0 0`,
     border: 0,
