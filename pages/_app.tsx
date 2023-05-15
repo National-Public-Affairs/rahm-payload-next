@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { ModalProvider } from '@faceless-ui/modal';
 import { GridProvider } from '@faceless-ui/css-grid';
 import { WindowInfoProvider } from '@faceless-ui/window-info';
+import { ThemeProvider } from 'react-jss';
 import Header from '../components/layout/Header';
 import useStyles from '../css/app';
 import zIndex from '../css/zIndex';
@@ -43,10 +44,12 @@ const MyApp = ({ Component, pageProps }: AppProps): React.ReactElement => {
             xl: 12,
           }}
         >
-          <div className={classes.app}>
-            <Header />
-            <Component {...pageProps} />
-          </div>
+          <ThemeProvider theme={{ active: false }}>
+            <div className={classes.app}>
+              <Header />
+              <Component {...pageProps} />
+            </div>
+          </ThemeProvider>
         </GridProvider>
       </ModalProvider>
     </WindowInfoProvider>
