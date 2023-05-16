@@ -5,6 +5,6 @@ export default createUseStyles({
   gridContainer: {
     maxWidth: gridContainerWidth,
     marginLeft: 'auto',
-    marginRigh: 'auto',
+    marginRight: 'auto',
   },
 });
