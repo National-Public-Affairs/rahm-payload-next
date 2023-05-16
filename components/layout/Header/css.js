@@ -91,11 +91,11 @@ export default createUseStyles({
     },
   },
   secondaryNavItem: {
-    color: colors.white,
+    color: colors.darkPurple,
     textDecoration: 'none',
     '&:hover': {
       transition: `all ${transitions.default}ms linear`,
-      color: colors.yellow,
+      color: colors.white,
     },
   },
   ctaWrap: {
