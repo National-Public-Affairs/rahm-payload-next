@@ -46,7 +46,7 @@ const MyApp = (appProps: AppProps): React.ReactElement => {
     >
       <ModalProvider
         zIndex={zIndex.modal}
-        classPrefix="payload"
+        classPrefix="rModal"
         transTime={400}
       >
         <GridProvider
