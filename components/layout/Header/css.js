@@ -9,6 +9,7 @@ import transitions from '../../../css/transitions';
 export default createUseStyles({
   header: {
     padding: `${base(1)} ${base(2)}`,
+    backgroundColor: colors.purple,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -32,7 +33,7 @@ export default createUseStyles({
   },
   menuButton: ({ menuActive }) => ({
     pointerEvents: 'all',
-    background: menuActive ? colors.darkPurple : colors.purple,
+    background: colors.darkPurple,
     transition: 'all 200ms linear',
     width: base(3),
     height: base(3),
