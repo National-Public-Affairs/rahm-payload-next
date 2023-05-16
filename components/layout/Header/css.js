@@ -23,7 +23,6 @@ export default createUseStyles({
     },
   },
   logo: {
-    background: colors.red,
     padding: base(0.75),
   },
   icon: {
@@ -33,7 +32,7 @@ export default createUseStyles({
   },
   menuButton: ({ menuActive }) => ({
     pointerEvents: 'all',
-    background: menuActive ? colors.purple : colors.yellow,
+    background: menuActive ? colors.darkPurple : colors.purple,
     transition: 'all 200ms linear',
     width: base(3),
     height: base(3),
@@ -42,7 +41,7 @@ export default createUseStyles({
     justifyContent: 'center',
     borderRadius: '100%',
     border: 0,
-    boxShadow: `inset 0 0 0 ${menuActive ? strokeWidth : '0px'} ${menuActive ? colors.purple : colors.darkPurple}`,
+    boxShadow: `inset 0 0 0 ${menuActive ? strokeWidth : '0px'} ${menuActive ? colors.white : colors.darkPurple}`,
     cursor: 'pointer',
     // '&:focus': {
     //   outline: 'none',
@@ -81,19 +80,22 @@ export default createUseStyles({
     },
   },
   primaryNavItem: {
-    color: colors.antique,
+    color: colors.white,
     textDecoration: 'none',
     '&:hover': {
       transition: `all ${transitions.default}ms linear`,
-      color: colors.blue,
+      color: colors.purple,
+    },
+    '&:active': {
+      color: colors.darkPurple,
     },
   },
   secondaryNavItem: {
-    color: 'white',
+    color: colors.white,
     textDecoration: 'none',
     '&:hover': {
       transition: `all ${transitions.default}ms linear`,
-      color: colors.blue,
+      color: colors.yellow,
     },
   },
   ctaWrap: {
