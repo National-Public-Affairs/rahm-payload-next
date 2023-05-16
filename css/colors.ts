@@ -5,3 +5,5 @@ export default {
   white: '#FFFFFF',
   gray: '#8F8F8F',
 };
+
+export type Color = 'purple' | 'darkPurple' | 'yellow' | 'white' | 'gray';
