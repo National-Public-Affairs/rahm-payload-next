@@ -1,1 +1,14 @@
-  @import url("https://use.typekit.net/gqh4siz.css");
+@import url("https://use.typekit.net/gqh4siz.css");
+
+.rModal__modal-item {
+  opacity: 0;
+  transition: opacity 400ms linear;
+}
+
+.rModal__modal-item--enterActive {
+  opacity: 1;
+}
+
+.rModal__modal-item--enterDone {
+  opacity: 1;
+}

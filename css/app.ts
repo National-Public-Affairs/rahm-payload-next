@@ -43,16 +43,18 @@ export default createUseStyles({
     li: {
       ...body,
     },
-    'rModal__modal-item': {
-      opacity: 0,
-      transition: `opacity ${transitions.modal}ms linear`,
-    },
-    'rModal__modal-item--enterActive': {
-      opacity: 1,
-    },
-    'rModal__modal-item--enterDone': {
-      opacity: 1,
-    },
+    // these classes aren't being applied
+    // using style.css as a workaround for the moment
+    // 'rModal__modal-item': {
+    //   opacity: 0,
+    //   transition: `opacity ${transitions.modal}ms linear`,
+    // },
+    // 'rModal__modal-item--enterActive': {
+    //   opacity: 1,
+    // },
+    // 'rModal__modal-item--enterDone': {
+    //   opacity: 1,
+    // },
   },
   app: {
     height: '100%',
