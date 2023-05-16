@@ -26,7 +26,10 @@ const Page: React.FC<Props> = (props) => {
   }
 
   return (
-    <Template>
+    <Template
+      footer={footer}
+      socialMedia={socialMedia}
+    >
       <Head
         title={page.meta?.title || page.title}
         description={page.meta?.description}
