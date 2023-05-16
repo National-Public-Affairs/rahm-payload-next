@@ -4,6 +4,7 @@ import colors from './colors';
 import { h1, h2, h3, h4, h5, body } from './type';
 import queries from './queries';
 import { headerHeight } from './sizes';
+import transitions from './transitions';
 
 export default createUseStyles({
   '@global': {
@@ -41,6 +42,16 @@ export default createUseStyles({
     },
     li: {
       ...body,
+    },
+    'rModal__modal-item': {
+      opacity: 0,
+      transition: `opacity ${transitions.modal}ms linear`,
+    },
+    'rModal__modal-item--enterActive': {
+      opacity: 1,
+    },
+    'rModal__modal-item--enterDone': {
+      opacity: 1,
     },
   },
   app: {
