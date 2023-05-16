@@ -19,11 +19,13 @@ const CMSLink: React.FC<Props> = ({
   if (type === 'page' || isRelativeURL) {
     return (
       <Link
+        legacyBehavior
         href={type === 'page' ? `/${page?.slug}` : url}
         scroll={false}
-        className={className}
       >
-        {children}
+        <a className={className}>
+          {children}
+        </a>
       </Link>
     );
   }
