@@ -21,6 +21,7 @@ const Header: React.FC<Props> = ({ megaMenu, socialMedia }) => {
     <header className={classes.header}>
       <NextLink
         href="/"
+        onClick={() => toggleModal(menuSlug)}
       >
         <Logo className={classes.logo} />
       </NextLink>
