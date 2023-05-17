@@ -4,7 +4,6 @@ import colors from './colors';
 import { h1, h2, h3, h4, h5, body } from './type';
 import queries from './queries';
 import { headerHeight } from './sizes';
-import transitions from './transitions';
 
 export default createUseStyles({
   '@global': {

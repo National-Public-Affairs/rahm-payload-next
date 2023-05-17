@@ -3,6 +3,7 @@ import queries from './queries';
 
 const headingWeight = {
   fontWeight: '700',
+  fontStyle: 'normal',
 };
 
 const bodyWeight = {
