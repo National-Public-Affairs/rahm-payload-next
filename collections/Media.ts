@@ -1,20 +1,29 @@
 import { CollectionConfig } from 'payload/types';
 
+export type SizeDetails = {
+  filename: string;
+  width: number;
+  height: number;
+}
+
+export type Size = 'card' | 'square' | 'portrait' | 'feature';
+
 export type MediaType = {
-  filename: string
-  width: number
-  height: number
-  alt: string
+  filename: string;
+  width: number;
+  height: number;
+  alt: string;
+  mimeType: string;
   sizes: {
     card?: {
-      filename: string
-      width: number
-      height: number
+      filename: string;
+      width: number;
+      height: number;
     }
     feature?: {
-      filename: string
-      width: number
-      height: number
+      filename: string;
+      width: number;
+      height: number;
     }
   }
 }

@@ -60,3 +60,10 @@ export const largeBody = {
     lineHeight: base(1.86),
   },
 };
+
+export const label = {
+  fontSize: 15,
+  lineHeight: base(2.4),
+  letterSpacing: '2.5px',
+  textTransform: 'uppercase',
+};

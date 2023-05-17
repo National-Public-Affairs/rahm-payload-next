@@ -17,7 +17,7 @@ export type Type = {
   title: string
   slug: string
   image?: MediaType
-  layout: Layout[]
+  layout?: Layout[]
   meta: {
     title?: string
     description?: string
@@ -54,6 +54,31 @@ export const Page: CollectionConfig = {
         {
           label: 'With Media',
           value: 'withMedia',
+        },
+      ],
+    },
+    {
+      type: 'row',
+      fields: [
+        {
+          type: 'upload',
+          name: 'foregroundMedia',
+          label: 'Foreground Media',
+          required: true,
+          relationTo: 'media',
+          admin: {
+            condition: (_, siblingData) => siblingData?.heroType === 'withMedia',
+          },
+        },
+        {
+          type: 'upload',
+          name: 'backgroundMedia',
+          label: 'Background Media',
+          required: true,
+          relationTo: 'media',
+          admin: {
+            condition: (_, siblingData) => siblingData?.heroType === 'withMedia',
+          },
         },
       ],
     },

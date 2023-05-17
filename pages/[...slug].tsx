@@ -11,6 +11,7 @@ import Template from '../components/layout/Template';
 import { Type as FooterType } from '../globals/Footer';
 import { Type as SocialMediaType } from '../globals/SocialMedia';
 
+
 export type Props = {
   page?: PageType;
   statusCode: number;
@@ -38,6 +39,12 @@ const Page: React.FC<Props> = (props) => {
       <header>
         <h1>{page.title}</h1>
       </header>
+      {/* <PageHero
+        title={page.title}
+        type={page.heroType}
+        content={page.heroContent}
+        media={page.heroMedia}
+      /> */}
       <div>
         {/* {page.image && (
           <img
