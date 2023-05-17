@@ -39,16 +39,32 @@ export const Page: CollectionConfig = {
       required: true,
     },
     {
-      name: 'image',
-      label: 'Featured Image',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'radio',
+      name: 'heroType',
+      label: 'Hero Type',
+      required: true,
+      defaultValue: 'minimal',
+      options: [
+        {
+          label: 'Minimal',
+          value: 'minimal',
+        },
+        {
+          label: 'With Media',
+          value: 'withMedia',
+        },
+      ],
+    },
+    {
+      type: 'richText',
+      name: 'heroContent',
+      label: 'Hero Content',
+      required: true,
     },
     {
       name: 'layout',
       label: 'Page Layout',
       type: 'blocks',
-      minRows: 1,
       blocks: [
         CallToAction,
         Content,
