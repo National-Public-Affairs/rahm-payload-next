@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload/types';
 import { MediaType } from './Media';
+import meta, { Type as MetaType } from '../fields/meta';
 import formatSlug from '../utilities/formatSlug';
 import { Image } from '../blocks/Image/Config';
 import { Type as ImageType } from '../blocks/Image/Component';
@@ -13,16 +14,18 @@ import WhiteHeadline from '../components/RichText/leaves/WhiteHeadline';
 
 export type Layout = CallToActionType | ContentType | ImageType
 
+export type HeroType = 'minimal' | 'withMedia';
+
 export type Type = {
-  title: string
-  slug: string
-  image?: MediaType
-  layout?: Layout[]
-  meta: {
-    title?: string
-    description?: string
-    keywords?: string
-  }
+  title: string;
+  heroType: HeroType;
+  heroContent: unknown;
+  foregroundMedia?: MediaType;
+  backgroundMedia?: MediaType;
+  slug: string;
+  image?: MediaType;
+  layout: Layout[];
+  meta: MetaType;
 }
 
 export const Page: CollectionConfig = {
@@ -105,28 +108,7 @@ export const Page: CollectionConfig = {
         Image,
       ],
     },
-    {
-      name: 'meta',
-      label: 'Page Meta',
-      type: 'group',
-      fields: [
-        {
-          name: 'title',
-          label: 'Title',
-          type: 'text',
-        },
-        {
-          name: 'description',
-          label: 'Description',
-          type: 'textarea',
-        },
-        {
-          name: 'keywords',
-          label: 'Keywords',
-          type: 'text',
-        },
-      ],
-    },
+    meta,
     {
       name: 'slug',
       label: 'Page Slug',
