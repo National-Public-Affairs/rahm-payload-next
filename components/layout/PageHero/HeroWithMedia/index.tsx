@@ -6,25 +6,53 @@ import GridContainer from '../../GridContainer';
 import useStyles from './css';
 import Media from '../../../Media';
 import { joinClassNames } from '../../../../css/joinClassNames';
+import Gutter from '../../Gutter';
 
 type Props = {
   content: unknown;
-  media?: MediaType;
+  foregroundMedia: MediaType;
+  backgroundMedia: MediaType;
 }
 
-const HeroWithMedia: React.FC<Props> = ({ content, media }) => {
+const HeroWithMedia: React.FC<Props> = ({
+  content,
+  foregroundMedia,
+  backgroundMedia,
+}) => {
   const classes = useStyles();
-
+  console.log('foreground media:', foregroundMedia);
   return (
     <div className={classes.wrap}>
       <GridContainer>
         <Grid>
-          <Cell>
+          <Cell
+            cols={5}
+            start={1}
+            colsM={4}
+            startM={1}
+          >
+            <div className={classes.foreground}>
+              <Media
+                {...foregroundMedia}
+              />
+            </div>
+          </Cell>
+          <Cell
+            cols={6}
+            start={6}
+            colsM={8}
+            startM={1}
+          >
             <RichText
               className={joinClassNames([classes.afterLoad, classes.richText])}
               content={content}
             />
           </Cell>
+          {/* <Gutter left>
+            <Media
+              {...backgroundMedia}
+            />
+          </Gutter> */}
         </Grid>
       </GridContainer>
     </div>

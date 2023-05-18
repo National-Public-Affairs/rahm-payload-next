@@ -2,14 +2,13 @@ import { createUseStyles } from 'react-jss';
 import { base } from '../../../../css/base';
 import queries from '../../../../css/queries';
 import { fadeInUp } from '../css';
-import { medium } from '../../../../css/sizes';
 
 export default createUseStyles({
   '@keyframes fade-in-up': {
     ...fadeInUp,
   },
   wrap: {
-    marginBottom: medium,
+    margin: 0,
   },
   afterLoad: {},
   richText: {

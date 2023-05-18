@@ -8,6 +8,7 @@ import Head from '../components/Head';
 import RenderBlocks from '../components/RenderBlocks';
 import GridContainer from '../components/layout/GridContainer';
 import Template from '../components/layout/Template';
+import PageHero from '../components/layout/PageHero';
 import { Type as FooterType } from '../globals/Footer';
 import { Type as SocialMediaType } from '../globals/SocialMedia';
 
@@ -36,34 +37,14 @@ const Page: React.FC<Props> = (props) => {
         description={page.meta?.description}
         keywords={page.meta?.keywords}
       />
-      <header>
-        <h1>{page.title}</h1>
-      </header>
-      {/* <PageHero
+      <PageHero
         title={page.title}
         type={page.heroType}
         content={page.heroContent}
-        media={page.heroMedia}
-      /> */}
-      <div>
-        {/* {page.image && (
-          <img
-            src={`${SERVER_URL}/media/${page.image.sizes?.feature?.filename || page.image.filename}`}
-            alt={page.image.alt}
-          />
-        )} */}
-      </div>
+        foregroundMedia={page?.foregroundMedia}
+        backgroundMedia={page?.backgroundMedia}
+      />
       <RenderBlocks layout={page.layout} />
-      <GridContainer>
-        <Grid>
-          <Cell cols={6}>
-            cell #1
-          </Cell>
-          <Cell cols={6}>
-            cell #2
-          </Cell>
-        </Grid>
-      </GridContainer>
     </Template>
   );
 };
