@@ -6,7 +6,6 @@ import GridContainer from '../../GridContainer';
 import useStyles from './css';
 import Media from '../../../Media';
 import { joinClassNames } from '../../../../css/joinClassNames';
-import Gutter from '../../Gutter';
 
 type Props = {
   content: unknown;
@@ -20,13 +19,13 @@ const HeroWithMedia: React.FC<Props> = ({
   backgroundMedia,
 }) => {
   const classes = useStyles();
-  console.log('foreground media:', foregroundMedia);
+
   return (
     <div className={classes.wrap}>
-      <GridContainer>
+      <GridContainer className={classes.gridContainer}>
         <Grid>
           <Cell
-            cols={5}
+            cols={4}
             start={1}
             colsM={4}
             startM={1}
@@ -37,8 +36,8 @@ const HeroWithMedia: React.FC<Props> = ({
             />
           </Cell>
           <Cell
-            cols={6}
-            start={6}
+            cols={8}
+            start={5}
             colsM={8}
             startM={1}
             className={classes.gridElement}
@@ -48,13 +47,12 @@ const HeroWithMedia: React.FC<Props> = ({
               content={content}
             />
           </Cell>
-          {/* <Gutter left>
-            <Media
-              {...backgroundMedia}
-            />
-          </Gutter> */}
         </Grid>
       </GridContainer>
+      <Media
+        {...backgroundMedia}
+        className={classes.backgroundMedia}
+      />
     </div>
   );
 };
