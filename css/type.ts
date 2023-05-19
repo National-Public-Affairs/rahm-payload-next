@@ -12,8 +12,8 @@ const bodyWeight = {
 
 export const h1 = {
   ...headingWeight,
-  fontSize: base(5),
-  lineHeight: base(5),
+  fontSize: base(6),
+  lineHeight: base(4),
   margin: `0 0 ${base(2)}`,
 };
 
