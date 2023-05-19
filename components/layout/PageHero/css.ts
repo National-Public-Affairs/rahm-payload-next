@@ -8,3 +8,14 @@ export const fadeInUp = {
     transform: 'none',
   },
 };
+
+export const twistFadeIn = {
+  from: {
+    opacity: 0,
+    transform: 'rotate(5deg) scale(1.1)',
+  },
+  to: {
+    opacity: 0.2,
+    transform: 'none',
+  },
+};
