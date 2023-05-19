@@ -1,12 +1,10 @@
 import React from 'react';
 import payload from 'payload';
 import { GetServerSideProps } from 'next';
-import { Cell, Grid } from '@faceless-ui/css-grid';
 import { Type as PageType } from '../collections/Page';
 import NotFound from '../components/NotFound';
 import Head from '../components/Head';
 import RenderBlocks from '../components/RenderBlocks';
-import GridContainer from '../components/layout/GridContainer';
 import Template from '../components/layout/Template';
 import PageHero from '../components/layout/PageHero';
 import { Type as FooterType } from '../globals/Footer';
