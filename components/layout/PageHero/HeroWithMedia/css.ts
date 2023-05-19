@@ -61,5 +61,9 @@ export default createUseStyles({
     animationDuration: '800ms',
     animationTimingFunction: 'ease',
     animationFillMode: 'both',
+
+    [queries.m]: {
+      width: '150%',
+    },
   },
 });
