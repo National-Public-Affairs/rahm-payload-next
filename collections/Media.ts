@@ -25,7 +25,8 @@ export type MediaType = {
       width: number;
       height: number;
     }
-  }
+  },
+  url?: string;
 }
 
 const Media: CollectionConfig = {
