@@ -37,7 +37,8 @@ const Media: React.FC<Props> = ({
     <div className={className}>
       <img
         className={classes.image}
-        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${sizes?.[preferredSize]?.filename || filename}`}
+        // src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${sizes?.[preferredSize]?.filename || filename}`}
+        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${filename}`}
         alt={alt}
       />
     </div>
