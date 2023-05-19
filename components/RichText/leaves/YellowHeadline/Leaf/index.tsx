@@ -1,13 +1,15 @@
 import React from 'react';
 import colors from '../../../../../css/colors';
-import { h1 } from '../../../../../css/type';
+import { base } from '../../../../../css/base';
 
 const YellowHeadline: React.FC<any> = ({ attributes, children }) => (
   <span
     {...attributes}
     style={{
-      ...h1,
       fontFamily: 'freight-sans-compressed-pro, system-ui, Helvetica Neue, Helvetica, Arial, sans-serif',
+      fontSize: base(6),
+      fontWeight: 700,
+      lineHeight: base(7),
       color: colors.yellow,
       textTransform: 'uppercase',
       backgroundColor: colors.darkPurple,
