@@ -52,6 +52,7 @@ const HeroWithMedia: React.FC<Props> = ({
       <Media
         {...backgroundMedia}
         className={classes.backgroundMedia}
+        clipMask="one"
       />
     </div>
   );
