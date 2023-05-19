@@ -25,3 +25,6 @@
   - [ ] Issues
   - [ ] About
   - [ ] Endorsements
+
+
+Figure out what's going on with the Media and preferred sizes, etc.
