@@ -8,7 +8,7 @@ import Media from '../../../Media';
 import { joinClassNames } from '../../../../css/joinClassNames';
 
 type Props = {
-  content: unknown;
+  content?: unknown;
   foregroundMedia: MediaType;
   backgroundMedia: MediaType;
 }
