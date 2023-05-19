@@ -30,6 +30,7 @@ const HeroWithMedia: React.FC<Props> = ({
             start={1}
             colsM={4}
             startM={1}
+            className={classes.gridElement}
           >
             <div className={classes.foreground}>
               <Media
@@ -42,6 +43,7 @@ const HeroWithMedia: React.FC<Props> = ({
             start={6}
             colsM={8}
             startM={1}
+            className={classes.gridElement}
           >
             <RichText
               className={joinClassNames([classes.afterLoad, classes.richText])}

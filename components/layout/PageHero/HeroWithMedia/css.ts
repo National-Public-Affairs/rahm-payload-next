@@ -36,7 +36,10 @@ export default createUseStyles({
     animationDelay: '300ms',
 
     [queries.m]: {
-      marginTop: base(-3.5),
+      marginTop: base(1),
     },
+  },
+  gridElement: {
+    alignSelf: 'end',
   },
 });
