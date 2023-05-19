@@ -3,6 +3,8 @@ import escapeHTML from 'escape-html';
 import { Text } from 'slate';
 import YellowHeadline from './leaves/YellowHeadline/Component';
 import WhiteHeadline from './leaves/WhiteHeadline/Component';
+import PurpleHeadline from './leaves/PurpleHeadline/Component';
+import MinimalWhiteHeadline from './leaves/MinimalWhiteHeadline/Component';
 
 // eslint-disable-next-line no-use-before-define
 type Children = Leaf[]
@@ -21,7 +23,7 @@ type Leaf = {
 const serialize = (children: Children): React.ReactElement[] => children.map((node, i) => {
   if (Text.isText(node)) {
     let text = <span dangerouslySetInnerHTML={{ __html: escapeHTML(node.text) }} />;
-
+    console.log('node', node);
     if (node.bold) {
       text = (
         <strong key={i}>
@@ -45,6 +47,23 @@ const serialize = (children: Children): React.ReactElement[] => children.map((no
         <WhiteHeadline>
           {text}
         </WhiteHeadline>
+      );
+    }
+
+    if (node['minimal-white-headline']) {
+      text = (
+        <MinimalWhiteHeadline>
+          {text}
+        </MinimalWhiteHeadline>
+      );
+    }
+
+    // custom styling for purple hero headlines
+    if (node['purple-headline']) {
+      text = (
+        <PurpleHeadline>
+          {text}
+        </PurpleHeadline>
       );
     }
 
