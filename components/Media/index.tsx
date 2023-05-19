@@ -1,10 +1,13 @@
 import React from 'react';
 import { MediaType, Size } from '../../collections/Media';
+import masks from '../graphics/Polygons/masks';
 import useStyles from './css';
+
 
 type Props = MediaType & {
   className?: string
   preferredSize?: Size
+  clipMask?: 'one' | 'two';
 }
 
 const Media: React.FC<Props> = ({
@@ -14,6 +17,8 @@ const Media: React.FC<Props> = ({
   alt,
   preferredSize,
   sizes,
+  clipMask,
+  url,
 }) => {
   const classes = useStyles();
 
@@ -33,12 +38,26 @@ const Media: React.FC<Props> = ({
     );
   }
 
+  if (clipMask === 'one') {
+    return (
+      <div className={className}>
+        <img
+          className={classes.image}
+          src={url}
+          alt={alt}
+          style={{
+            clipPath: masks.maskOne,
+          }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
       <img
         className={classes.image}
-        // src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${sizes?.[preferredSize]?.filename || filename}`}
-        src={`${process.env.NEXT_PUBLIC_SERVER_URL}/media/${filename}`}
+        src={url}
         alt={alt}
       />
     </div>
