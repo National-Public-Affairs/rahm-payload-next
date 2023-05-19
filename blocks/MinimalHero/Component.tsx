@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Cell } from '@faceless-ui/css-grid';
 import color from 'color';
 import RichText from '../../components/RichText';
 import GridContainer from '../../components/layout/GridContainer';
@@ -6,20 +7,31 @@ import PolygonTwo from '../../components/graphics/Polygons/PolygonTwo';
 import colors from '../../css/colors';
 import useStyles from './css';
 
-export type Props = {
-  content: unknown;
+export type Type = {
+  blockType: 'minimalHeroBlock';
+  blockName?: string;
+  minimalHeroBlockContent: unknown;
 }
 
-const MinimalPageHero: React.FC<Props> = ({ content }) => {
+export const Component: React.FC<Type> = ({ minimalHeroBlockContent }) => {
   const classes = useStyles();
-
+  console.log('minimal hero block content:', minimalHeroBlockContent);
   return (
     <div className={classes.wrap}>
       <GridContainer>
-        <RichText
-          className={classes.richText}
-          content={content}
-        />
+        <Grid>
+          <Cell
+            cols={10}
+            start={3}
+            colsM={6}
+            startM={2}
+          >
+            <RichText
+              className={classes.richText}
+              content={minimalHeroBlockContent}
+            />
+          </Cell>
+        </Grid>
       </GridContainer>
       <div className={classes.bg}>
         <PolygonTwo
@@ -30,5 +42,3 @@ const MinimalPageHero: React.FC<Props> = ({ content }) => {
     </div>
   );
 };
-
-export default MinimalPageHero;
