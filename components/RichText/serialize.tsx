@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import escapeHTML from 'escape-html';
 import { Text } from 'slate';
+import YellowHeadline from './leaves/YellowHeadline/Component';
+import WhiteHeadline from './leaves/WhiteHeadline/Component';
 
 // eslint-disable-next-line no-use-before-define
 type Children = Leaf[]
@@ -25,6 +27,24 @@ const serialize = (children: Children): React.ReactElement[] => children.map((no
         <strong key={i}>
           {text}
         </strong>
+      );
+    }
+
+    // custom styling for yellow hero headlines
+    if (node['yellow-headline']) {
+      text = (
+        <YellowHeadline>
+          {text}
+        </YellowHeadline>
+      );
+    }
+
+    // custom styling for white hero headlines
+    if (node['white-headline']) {
+      text = (
+        <WhiteHeadline>
+          {text}
+        </WhiteHeadline>
       );
     }
 
