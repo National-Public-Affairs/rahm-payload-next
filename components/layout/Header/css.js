@@ -20,11 +20,8 @@ export default createUseStyles({
     right: 0,
     pointerEvents: 'none',
     [queries.m]: {
-      padding: base(1.5),
+      padding: base(1),
     },
-  },
-  logo: {
-    padding: base(0.75),
   },
   icon: {
     width: base(1.5),
