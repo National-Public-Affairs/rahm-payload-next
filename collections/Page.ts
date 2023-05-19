@@ -10,6 +10,8 @@ import { Content } from '../blocks/Content/Config';
 import { Type as ContentType } from '../blocks/Content/Component';
 import YellowHeadline from '../components/RichText/leaves/YellowHeadline';
 import WhiteHeadline from '../components/RichText/leaves/WhiteHeadline';
+import PurpleHeadline from '../components/RichText/leaves/PurpleHeadline';
+import MinimalWhiteHeadline from '../components/RichText/leaves/MinimalWhiteHeadline';
 
 
 export type Layout = CallToActionType | ContentType | ImageType
@@ -19,7 +21,8 @@ export type HeroType = 'minimal' | 'withMedia';
 export type Type = {
   title: string;
   heroType: HeroType;
-  heroContent: unknown;
+  heroContent?: unknown;
+  minimalHeroContent?: unknown;
   foregroundMedia?: MediaType;
   backgroundMedia?: MediaType;
   slug: string;
@@ -91,10 +94,25 @@ export const Page: CollectionConfig = {
       label: 'Hero Content',
       required: true,
       admin: {
+        condition: (_, siblingData) => siblingData?.heroType === 'withMedia',
         elements: [],
         leaves: [
           YellowHeadline,
           WhiteHeadline,
+        ],
+      },
+    },
+    {
+      type: 'richText',
+      name: 'minimalHeroContent',
+      label: 'Hero Content',
+      required: true,
+      admin: {
+        condition: (_, siblingData) => siblingData?.heroType === 'minimal',
+        elements: [],
+        leaves: [
+          PurpleHeadline,
+          MinimalWhiteHeadline,
         ],
       },
     },
