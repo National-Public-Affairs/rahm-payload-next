@@ -8,13 +8,15 @@ import { CallToAction } from '../blocks/CallToAction/Config';
 import { Type as CallToActionType } from '../blocks/CallToAction/Component';
 import { Content } from '../blocks/Content/Config';
 import { Type as ContentType } from '../blocks/Content/Component';
+import { MinimalHero } from '../blocks/MinimalHero/config';
+import { Props as MinimalHeroType } from '../blocks/MinimalHero/Component';
 import YellowHeadline from '../components/RichText/leaves/YellowHeadline';
 import WhiteHeadline from '../components/RichText/leaves/WhiteHeadline';
 import PurpleHeadline from '../components/RichText/leaves/PurpleHeadline';
 import MinimalWhiteHeadline from '../components/RichText/leaves/MinimalWhiteHeadline';
 
 
-export type Layout = CallToActionType | ContentType | ImageType
+export type Layout = CallToActionType | ContentType | ImageType | MinimalHeroType;
 
 export type HeroType = 'minimal' | 'withMedia';
 
@@ -124,6 +126,7 @@ export const Page: CollectionConfig = {
         CallToAction,
         Content,
         Image,
+        MinimalHero,
       ],
     },
     meta,
