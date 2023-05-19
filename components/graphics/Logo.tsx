@@ -7,13 +7,12 @@ type Props = {
 
 const Logo: React.FC<Props> = ({ className }) => (
   <svg
-    width="235.56"
-    height="150" // base(7.5)
+    width="150"
+    height="110" // base(7.5)
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 612 390.04"
     xmlSpace="preserve"
     enableBackground="new 0 0 612 390.04"
-    className={className}
   >
     <rect
       id="XMLID_00000062896022287137478890000015573255980750334351_"
