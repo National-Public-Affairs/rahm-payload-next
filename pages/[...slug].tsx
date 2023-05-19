@@ -38,7 +38,8 @@ const Page: React.FC<Props> = (props) => {
       <PageHero
         title={page.title}
         type={page.heroType}
-        content={page.heroContent}
+        content={page?.heroContent}
+        minimalHeroContent={page?.minimalHeroContent}
         foregroundMedia={page?.foregroundMedia}
         backgroundMedia={page?.backgroundMedia}
       />
