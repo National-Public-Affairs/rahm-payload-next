@@ -1,5 +1,6 @@
 import { Block } from 'payload/types';
 import backgroundColor from '../../fields/backgroundColor';
+import PurpleText from '../../components/RichText/leaves/PurpleText';
 
 export const Content: Block = {
   slug: 'content',
@@ -12,6 +13,11 @@ export const Content: Block = {
     {
       name: 'content',
       type: 'richText',
+      admin: {
+        leaves: [
+          PurpleText,
+        ],
+      },
     },
   ],
 };

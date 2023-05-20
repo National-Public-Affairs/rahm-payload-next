@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import escapeHTML from 'escape-html';
 import { Text } from 'slate';
+import PurpleText from './leaves/PurpleText/Component';
 import YellowHeadline from './leaves/YellowHeadline/Component';
 import WhiteHeadline from './leaves/WhiteHeadline/Component';
 import PurpleHeadline from './leaves/PurpleHeadline/Component';
@@ -29,6 +30,15 @@ const serialize = (children: Children): React.ReactElement[] => children.map((no
         <strong key={i}>
           {text}
         </strong>
+      );
+    }
+
+    // custom styling for purple text
+    if (node['purple-text']) {
+      text = (
+        <PurpleText>
+          {text}
+        </PurpleText>
       );
     }
 
