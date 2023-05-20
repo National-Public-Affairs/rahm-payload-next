@@ -5,28 +5,46 @@ import { headerHeight, strokeWidth } from '../../../css/sizes';
 import queries from '../../../css/queries';
 import zIndex from '../../../css/zIndex';
 import transitions from '../../../css/transitions';
+import breakpoints from '../../../css/breakpoints';
+import boxShadows from '../../../css/boxShadows';
 
 export default createUseStyles({
   header: {
     padding: `${base(1)} ${base(2)}`,
     backgroundColor: colors.purple,
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     zIndex: zIndex.header,
     position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
-    pointerEvents: 'none',
+    boxShadow: boxShadows.standard,
     [queries.m]: {
       padding: base(1),
+      pointerEvents: 'none',
     },
+  },
+  headerContent: {
+    maxWidth: `${breakpoints.l}px`,
+    margin: 'auto',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   icon: {
     width: base(1.5),
     height: base(1.5),
     display: 'block',
+  },
+  headerOptions: {
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: base(3),
+    textTransform: 'uppercase',
+    [queries.m]: {
+      display: 'none',
+    },
   },
   menuButton: ({ menuActive }) => ({
     pointerEvents: 'all',
@@ -41,6 +59,10 @@ export default createUseStyles({
     border: 0,
     boxShadow: `inset 0 0 0 ${menuActive ? strokeWidth : '0px'} ${menuActive ? colors.white : colors.darkPurple}`,
     cursor: 'pointer',
+
+    '@media (min-width: 851px)': {
+      display: 'none',
+    },
     // '&:focus': {
     //   outline: 'none',
     //   background: color(colors.gray).lighten(0.8).hex(),
