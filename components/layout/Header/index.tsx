@@ -19,20 +19,38 @@ const Header: React.FC<Props> = ({ megaMenu, socialMedia }) => {
 
   return (
     <header className={classes.header}>
-      <NextLink
-        href="/"
-        onClick={() => toggleModal(menuSlug)}
-      >
-        <Logo className={classes.logo} />
-      </NextLink>
+      <div className={classes.headerContent}>
+        <NextLink
+          href="/"
+          onClick={() => toggleModal(menuSlug)}
+        >
+          <Logo className={classes.logo} />
+        </NextLink>
 
-      <button
-        type="button"
-        className={classes.menuButton}
-        onClick={() => toggleModal(menuSlug)}
-      >
-        <Hamburger active={menuActive} />
-      </button>
+        <div className={classes.headerOptions}>
+          {
+            megaMenu?.nav?.map(({ link }, i) => (
+              <Link
+                {...link}
+                key={i}
+                className={classes.primaryNavItem}
+              >
+                <h5 key={i}>
+                  {link.label}
+                </h5>
+              </Link>
+            ))
+          }
+        </div>
+
+        <button
+          type="button"
+          className={classes.menuButton}
+          onClick={() => toggleModal(menuSlug)}
+        >
+          <Hamburger active={menuActive} />
+        </button>
+      </div>
 
       <Modal
         slug={menuSlug}
