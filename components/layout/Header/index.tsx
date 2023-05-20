@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import NextLink from 'next/link';
 import { Modal, useModal } from '@faceless-ui/modal';
@@ -22,7 +24,7 @@ const Header: React.FC<Props> = ({ megaMenu, socialMedia }) => {
       <div className={classes.headerContent}>
         <NextLink
           href="/"
-          onClick={() => toggleModal(menuSlug)}
+          className={classes.logo}
         >
           <Logo className={classes.logo} />
         </NextLink>
@@ -72,6 +74,7 @@ const Header: React.FC<Props> = ({ megaMenu, socialMedia }) => {
                     <h3
                       key={i}
                       style={{ marginTop: i === 0 ? 0 : undefined }}
+                      onClick={() => toggleModal(menuSlug)}
                     >
                       {link.label}
                     </h3>
