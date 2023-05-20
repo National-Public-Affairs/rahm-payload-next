@@ -102,9 +102,11 @@ export default createUseStyles({
   primaryNavItem: {
     color: colors.white,
     textDecoration: 'none',
+    boxShadow: '0px 0px 0px 0px rgba(240, 163, 41, 0)',
     '&:hover': {
       transition: `all ${transitions.default}ms linear`,
-      color: colors.purple,
+      color: colors.yellow,
+      boxShadow: `0px ${base(0.5)} 0px 0px rgba(240, 163, 41, 1)`,
     },
     '&:active': {
       color: colors.darkPurple,
@@ -117,6 +119,9 @@ export default createUseStyles({
       transition: `all ${transitions.default}ms linear`,
       color: colors.white,
     },
+  },
+  logo: {
+    pointerEvents: 'all',
   },
   ctaWrap: {
     position: 'fixed',
