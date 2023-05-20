@@ -23,7 +23,6 @@ const PageHero: React.FC<Props> = ({
   foregroundMedia,
   backgroundMedia,
 }) => {
-  console.log('type:', type);
   if (type === 'withMedia') {
     return (
       <ShowAfterFirstRender>
