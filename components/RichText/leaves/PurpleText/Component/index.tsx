@@ -1,7 +1,7 @@
 import React from 'react';
 import useStyles from './css';
 
-const PurpleHeadline: React.FC = ({ children }) => {
+const PurpleText: React.FC = ({ children }) => {
   const { purpleText } = useStyles();
 
   return (
@@ -11,4 +11,4 @@ const PurpleHeadline: React.FC = ({ children }) => {
   );
 };
 
-export default PurpleHeadline;
+export default PurpleText;
