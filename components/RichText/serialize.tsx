@@ -2,6 +2,9 @@ import React, { Fragment } from 'react';
 import escapeHTML from 'escape-html';
 import { Text } from 'slate';
 import PurpleText from './leaves/PurpleText/Component';
+import DarkPurpleText from './leaves/DarkPurpleText/Component';
+import YellowText from './leaves/YellowText/Component';
+import WhiteText from './leaves/WhiteText/Component';
 import YellowHeadline from './leaves/YellowHeadline/Component';
 import WhiteHeadline from './leaves/WhiteHeadline/Component';
 import PurpleHeadline from './leaves/PurpleHeadline/Component';
@@ -39,6 +42,33 @@ const serialize = (children: Children): React.ReactElement[] => children.map((no
         <PurpleText>
           {text}
         </PurpleText>
+      );
+    }
+
+    // custom styling for dark purple text
+    if (node['dark-purple-text']) {
+      text = (
+        <DarkPurpleText>
+          {text}
+        </DarkPurpleText>
+      );
+    }
+
+    // custom styling for yellow text
+    if (node['yellow-text']) {
+      text = (
+        <YellowText>
+          {text}
+        </YellowText>
+      );
+    }
+
+    // custom styling for white text
+    if (node['white-text']) {
+      text = (
+        <WhiteText>
+          {text}
+        </WhiteText>
       );
     }
 
