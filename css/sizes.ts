@@ -2,7 +2,7 @@ import { base } from './base';
 
 export const strokeWidth = '3px';
 
-export const headerHeight = base(7.5);
+export const headerHeight = base(8);
 
 export const small = base(2);
 export const medium = base(7);
