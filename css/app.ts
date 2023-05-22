@@ -43,6 +43,10 @@ export default createUseStyles({
     },
     li: {
       ...body,
+      listStyle: 'none',
+      '&:before': {
+        content: '&#8882;',
+      },
     },
     // these classes aren't being applied
     // using style.css as a workaround for the moment
