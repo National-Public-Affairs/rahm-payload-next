@@ -22,7 +22,8 @@ export const h1 = {
     fontSize: base(6),
   },
   [queries.xs]: {
-    fontSize: base(4),
+    fontSize: base(3.5),
+    lineHeight: base(2.5),
   },
 };
 
