@@ -46,7 +46,22 @@ const Media: React.FC<Props> = ({
           src={url}
           alt={alt}
           style={{
-            clipPath: clipMask === 'one' ? masks.maskOne : masks.maskTwo,
+            clipPath: masks.maskOne,
+          }}
+        />
+      </div>
+    );
+  }
+
+  if (clipMask === 'two') {
+    return (
+      <div className={className}>
+        <img
+          className={classes.image}
+          src={url}
+          alt={alt}
+          style={{
+            clipPath: masks.maskTwo,
           }}
         />
       </div>
