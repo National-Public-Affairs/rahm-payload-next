@@ -14,6 +14,56 @@ export const Content: Block = {
   fields: [
     backgroundColor,
     {
+      type: 'radio',
+      name: 'accentMediaToggle',
+      label: 'Dispaly Accent Media',
+      defaultValue: 'none',
+      admin: {
+        layout: 'horizontal',
+      },
+      options: [
+        {
+          value: 'none',
+          label: 'None',
+        },
+        {
+          value: 'withMedia',
+          label: 'With Media',
+        },
+      ],
+    },
+    {
+      type: 'upload',
+      name: 'accentMedia',
+      label: 'Accent Media',
+      required: true,
+      relationTo: 'media',
+      admin: {
+        condition: (_, siblingData) => siblingData?.accentMediaToggle === 'withMedia',
+      },
+    },
+    {
+      type: 'radio',
+      name: 'accentMediaPosition',
+      label: 'Accent Media Positioning',
+      defaultValue: 'left',
+      required: true,
+      admin: {
+        layout: 'horizontal',
+        condition: (_, siblingData) => siblingData?.accentMediaToggle === 'withMedia',
+      },
+      options: [
+        {
+          value: 'left',
+          label: 'Left',
+        },
+        {
+          value: 'right',
+          label: 'Right',
+        },
+      ],
+    },
+    {
       name: 'content',
       type: 'richText',
       admin: {
