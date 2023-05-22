@@ -9,7 +9,7 @@ import { Type as CallToActionType } from '../blocks/CallToAction/Component';
 import { Content } from '../blocks/Content/Config';
 import { Type as ContentType } from '../blocks/Content/Component';
 import { MinimalHero } from '../blocks/MinimalHero/config';
-import { Props as MinimalHeroType } from '../blocks/MinimalHero/Component';
+import { Type as MinimalHeroType } from '../blocks/MinimalHero/Component';
 import YellowHeadline from '../components/RichText/leaves/YellowHeadline';
 import WhiteHeadline from '../components/RichText/leaves/WhiteHeadline';
 import PurpleHeadline from '../components/RichText/leaves/PurpleHeadline';
