@@ -30,7 +30,10 @@ export const Component: React.FC<Type> = ({
       <GridContainer>
         <Grid>
           <Cell>
-            <RichText content={content} />
+            <RichText
+              content={content}
+              className={classes.content}
+            />
           </Cell>
         </Grid>
       </GridContainer>
