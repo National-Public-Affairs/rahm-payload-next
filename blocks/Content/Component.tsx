@@ -1,5 +1,7 @@
 import React from 'react';
+import { Grid, Cell } from '@faceless-ui/css-grid';
 import RichText from '../../components/RichText';
+import GridContainer from '../../components/layout/GridContainer';
 import useStyles from './css';
 
 export type Type = {
@@ -17,10 +19,16 @@ export const Component: React.FC<Type> = ({
 
   return (
     <div className={classes.wrap}>
-      <RichText
-        content={content}
-        className={classes.content}
-      />
+      <GridContainer>
+        <Grid>
+          <Cell>
+            <RichText
+              content={content}
+              className={classes.content}
+            />
+          </Cell>
+        </Grid>
+      </GridContainer>
     </div>
   );
 };
