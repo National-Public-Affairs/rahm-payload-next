@@ -15,6 +15,15 @@ export const h1 = {
   fontSize: base(6),
   lineHeight: base(4),
   margin: `0 0 ${base(2)}`,
+  [queries.l]: {
+    fontSize: base(5),
+  },
+  [queries.m]: {
+    fontSize: base(6),
+  },
+  [queries.xs]: {
+    fontSize: base(4),
+  },
 };
 
 export const h2 = {
