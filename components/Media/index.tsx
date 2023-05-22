@@ -21,7 +21,7 @@ const Media: React.FC<Props> = ({
   url,
 }) => {
   const classes = useStyles();
-  console.log('clipping path prop', clipMask)
+
   if (mimeType.includes('video')) {
     return (
       <div className={className}>
