@@ -58,5 +58,8 @@ export default createUseStyles({
   app: {
     height: '100%',
     marginTop: headerHeight,
+    [queries.m]: {
+      marginTop: base(11),
+    },
   },
 });
