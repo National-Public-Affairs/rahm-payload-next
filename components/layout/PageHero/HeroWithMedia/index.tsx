@@ -33,9 +33,7 @@ const HeroWithMedia: React.FC<Props> = ({
             startM={1}
             className={classes.gridElement}
           >
-            <Media
-              {...foregroundMedia}
-            />
+            <Media {...foregroundMedia} />
           </Cell>
           <Cell
             cols={8}
