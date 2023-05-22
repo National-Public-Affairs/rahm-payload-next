@@ -8,6 +8,8 @@ import { CallToAction } from '../blocks/CallToAction/Config';
 import { Type as CallToActionType } from '../blocks/CallToAction/Component';
 import { Content } from '../blocks/Content/Config';
 import { Type as ContentType } from '../blocks/Content/Component';
+import { Donation } from '../blocks/Donation/config';
+import { Type as DonationType } from '../blocks/Donation/Component';
 import { MinimalHero } from '../blocks/MinimalHero/config';
 import { Type as MinimalHeroType } from '../blocks/MinimalHero/Component';
 import Spacer, { Type as SpacerType } from '../blocks/Spacer';
@@ -17,7 +19,7 @@ import PurpleHeadline from '../components/RichText/leaves/PurpleHeadline';
 import MinimalWhiteHeadline from '../components/RichText/leaves/MinimalWhiteHeadline';
 
 
-export type Layout = CallToActionType | ContentType | ImageType | MinimalHeroType | SpacerType;
+export type Layout = CallToActionType | ContentType | ImageType | MinimalHeroType | SpacerType | DonationType;
 
 export type HeroType = 'minimal' | 'withMedia';
 
@@ -129,6 +131,7 @@ export const Page: CollectionConfig = {
         Image,
         MinimalHero,
         Spacer,
+        Donation,
       ],
     },
     meta,

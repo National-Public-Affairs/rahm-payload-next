@@ -3,6 +3,7 @@ import { Component as content } from './Content/Component';
 import { Component as image } from './Image/Component';
 import { Component as minimalHeroBlock } from './MinimalHero/Component';
 import { Component as spacer } from './Spacer/Component';
+import { Component as donation} from './Donation/Component';
 
 
 export const components = {
@@ -11,4 +12,5 @@ export const components = {
   image,
   minimalHeroBlock,
   spacer,
+  donation,
 };

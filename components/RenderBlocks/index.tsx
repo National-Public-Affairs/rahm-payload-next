@@ -7,27 +7,29 @@ type Props = {
   className?: string
 }
 
-const RenderBlocks: React.FC<Props> = ({ layout, className }) => (
-  <div className={[
-    className,
-  ].filter(Boolean).join(' ')}
-  >
-    {layout.map((block, i) => {
-      const Block: React.FC<any> = components[block.blockType];
+const RenderBlocks: React.FC<Props> = ({ layout, className }) => {
+  return (
+    <div className={[
+      className,
+    ].filter(Boolean).join(' ')}
+    >
+      {layout.map((block, i) => {
+        const Block: React.FC<any> = components[block.blockType];
+        console.log('layout', block.blockType);
+        if (Block) {
+          return (
+            <section
+              key={i}
+            >
+              <Block {...block} />
+            </section>
+          );
+        }
 
-      if (Block) {
-        return (
-          <section
-            key={i}
-          >
-            <Block {...block} />
-          </section>
-        );
-      }
-
-      return null;
-    })}
-  </div>
-);
+        return null;
+      })}
+    </div>
+  );
+};
 
 export default RenderBlocks;
