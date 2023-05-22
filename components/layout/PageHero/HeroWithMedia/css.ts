@@ -17,6 +17,7 @@ export default createUseStyles({
   },
   gridContainer: {
     zIndex: 1,
+    padding: 0,
   },
   afterLoad: {},
   richText: {
@@ -48,6 +49,7 @@ export default createUseStyles({
     },
   },
   gridElement: {
+    justifySelf: 'center',
     alignSelf: 'end',
   },
   backgroundMedia: {
