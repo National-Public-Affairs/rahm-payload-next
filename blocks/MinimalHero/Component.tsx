@@ -15,7 +15,7 @@ export type Type = {
 
 export const Component: React.FC<Type> = ({ minimalHeroBlockContent }) => {
   const classes = useStyles();
-  console.log('minimal hero block content:', minimalHeroBlockContent);
+
   return (
     <div className={classes.wrap}>
       <GridContainer>
