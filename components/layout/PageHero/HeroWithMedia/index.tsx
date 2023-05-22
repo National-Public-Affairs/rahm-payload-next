@@ -27,7 +27,9 @@ const HeroWithMedia: React.FC<Props> = ({
           <Cell
             cols={4}
             start={1}
-            colsM={4}
+            colsL={4}
+            startL={1}
+            colsM={3}
             startM={1}
             className={classes.gridElement}
           >
@@ -38,8 +40,10 @@ const HeroWithMedia: React.FC<Props> = ({
           <Cell
             cols={8}
             start={5}
-            colsM={8}
-            startM={1}
+            colsL={6}
+            startL={5}
+            colsM={5}
+            startM={4}
             className={classes.gridElement}
           >
             <RichText
