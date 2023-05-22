@@ -4,6 +4,7 @@ import RichText from '../../components/RichText';
 import GridContainer from '../../components/layout/GridContainer';
 import useStyles from './css';
 import { MediaType } from '../../collections/Media';
+import Media from '../../components/Media';
 
 export type Type = {
   blockType: 'content';
@@ -18,21 +19,30 @@ export type Type = {
 export const Component: React.FC<Type> = ({
   content,
   backgroundColor,
+  accentMediaToggle,
+  accentMedia,
+  accentMediaPosition,
 }) => {
-  const classes = useStyles({ backgroundColor });
+  const classes = useStyles({ backgroundColor, accentMediaPosition });
 
   return (
     <div className={classes.wrap}>
       <GridContainer>
         <Grid>
           <Cell>
-            <RichText
-              content={content}
-              className={classes.content}
-            />
+            <RichText content={content} />
           </Cell>
         </Grid>
       </GridContainer>
+      {
+        accentMediaToggle === 'withMedia' && (
+          <Media
+            {...accentMedia}
+            clipMask="two"
+            className={classes.accentMedia}
+          />
+        )
+      }
     </div>
   );
 };
