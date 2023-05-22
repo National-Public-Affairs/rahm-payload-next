@@ -42,7 +42,7 @@ export default createUseStyles({
     alignItems: 'center',
     gap: base(3),
     textTransform: 'uppercase',
-    [queries.m]: {
+    [queries.l]: {
       display: 'none',
     },
   },
@@ -60,17 +60,9 @@ export default createUseStyles({
     boxShadow: `inset 0 0 0 ${menuActive ? strokeWidth : '0px'} ${menuActive ? colors.white : colors.darkPurple}`,
     cursor: 'pointer',
 
-    '@media (min-width: 851px)': {
+    '@media (min-width: 1120px)': {
       display: 'none',
     },
-    // '&:focus': {
-    //   outline: 'none',
-    //   background: color(colors.gray).lighten(0.8).hex(),
-    // },
-    // '&:active': {
-    //   outline: 'none',
-    //   background: color(colors.gray).lighten(1.2).hex(),
-    // },
   }),
   menu: {
     background: colors.yellow,
