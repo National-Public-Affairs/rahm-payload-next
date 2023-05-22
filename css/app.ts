@@ -36,8 +36,10 @@ export default createUseStyles({
       margin: `0 0 ${base()} 0`,
     },
     ul: {
-      padding: `0 0 0 ${base()}`,
+      padding: `0 0 0 ${base(3)}`,
       margin: `0 0 ${base()} 0`,
+      marginBlockStart: base(2),
+      fontSize: base(3),
     },
     li: {
       ...body,
