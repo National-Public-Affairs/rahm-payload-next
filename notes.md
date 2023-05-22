@@ -40,3 +40,4 @@ Figure out what's going on with the Media and preferred sizes, etc.
 - [ ] Make sure width on homepage is correct
 - [ ] Add custom bullet points
 - [ ] Set up broswer API for elements that are currently within the viewport
+- [ ] Deal with image sizing with props, etc.
