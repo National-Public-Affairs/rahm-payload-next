@@ -8,6 +8,7 @@ export default createUseStyles({
     '@global': {
       '*': {
         whiteSpace: 'pre-wrap',
+        zIndex: 10,
       },
       '> *:first-child': {
         marginTop: 0,
