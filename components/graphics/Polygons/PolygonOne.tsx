@@ -3,9 +3,14 @@ import React from 'react';
 type Props = {
   fillColor?: string;
   strokeColor?: string;
+  className?: string;
 }
 
-const PolygonOne: React.FC<Props> = ({ fillColor, strokeColor }) => (
+const PolygonOne: React.FC<Props> = ({
+  fillColor,
+  strokeColor,
+  className,
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1341.0005 578.54"
@@ -14,6 +19,7 @@ const PolygonOne: React.FC<Props> = ({ fillColor, strokeColor }) => (
       strokeMiterlimit: 10,
       fill: fillColor || 'rgba(0,0,0,0)',
     }}
+    className={className}
   >
     <g>
       <polygon
