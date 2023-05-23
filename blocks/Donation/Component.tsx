@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Cell } from '@faceless-ui/css-grid';
 import color from 'color';
 import GridContainer from '../../components/layout/GridContainer';
-import PolygonTwo from '../../components/graphics/Polygons/PolygonTwo';
+import PolygonThree from '../../components/graphics/Polygons/PolygonThree';
 import colors from '../../css/colors';
 import useStyles from './css';
 
@@ -19,21 +19,21 @@ export type Type = {
 
 export const Component: React.FC<Type> = ({ cta, donationOptions }) => {
   const classes = useStyles();
-console.log('cta', cta);
+console.log('donation options', donationOptions);
   return (
     <div className={classes.wrap}>
       <GridContainer>
         <Grid>
-          <Cell
-            
-          >
-            this is the donation block.
+          <Cell className={classes.cta}>
+            <h1>
+              {cta}
+            </h1>
           </Cell>
         </Grid>
       </GridContainer>
       <div className={classes.bg}>
-        <PolygonTwo
-          fillColor={color(colors.yellow).darken(0.1)}
+        <PolygonThree
+          fillColor={colors.purple}
           className={classes.polygon}
         />
       </div>

@@ -19,6 +19,11 @@ export default createUseStyles({
     position: 'relative',
     zIndex: 1,
     padding: `${base(5)} 0`,
+    color: colors.white,
+  },
+  cta: {
+    textTransform: 'uppercase',
+    textAlign: 'center',
   },
   bg: {
     position: 'absolute',
@@ -27,7 +32,7 @@ export default createUseStyles({
     left: 0,
     right: 0,
     zIndex: -10,
-    backgroundColor: colors.yellow,
+    backgroundColor: colors.darkPurple,
     display: 'grid',
     gridTemplate: '100% / 100%',
   },
@@ -37,7 +42,6 @@ export default createUseStyles({
     justifySelf: 'center',
     alignSelf: 'center',
     zIndex: 20,
-    width: '80%',
     height: '60%',
   },
 });
