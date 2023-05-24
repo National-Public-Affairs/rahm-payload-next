@@ -16,6 +16,36 @@ const Footer: GlobalConfig = {
   },
   fields: [
     {
+      type: 'radio',
+      name: 'displayDisclaimer',
+      label: 'Display disclaimer?',
+      options: [
+        {
+          value: 'yes',
+          label: 'Yes',
+        },
+        {
+          value: 'no',
+          label: 'No',
+        },
+      ],
+    },
+    {
+      type: 'radio',
+      name: 'displayAddress',
+      label: 'Display organization address?',
+      options: [
+        {
+          value: 'yes',
+          label: 'Yes',
+        },
+        {
+          value: 'no',
+          label: 'No',
+        },
+      ],
+    },
+    {
       name: 'nav',
       label: 'Navigation',
       type: 'array',
@@ -25,6 +55,36 @@ const Footer: GlobalConfig = {
       },
       fields: [
         link,
+      ],
+    },
+    {
+      type: 'radio',
+      name: 'displaySocial',
+      label: 'Display social links?',
+      options: [
+        {
+          value: 'yes',
+          label: 'Yes',
+        },
+        {
+          value: 'no',
+          label: 'No',
+        },
+      ],
+    },
+    {
+      type: 'radio',
+      name: 'displayCopyright',
+      label: 'Display copyright?',
+      options: [
+        {
+          value: 'yes',
+          label: 'Yes',
+        },
+        {
+          value: 'no',
+          label: 'No',
+        },
       ],
     },
   ],
