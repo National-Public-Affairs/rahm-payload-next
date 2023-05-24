@@ -1,4 +1,5 @@
 import { Block } from 'payload/types';
+import link from '../../fields/link';
 
 export const Donation: Block = {
   slug: 'donation',
@@ -18,12 +19,14 @@ export const Donation: Block = {
       name: 'donationOptions',
       label: 'Donation Options',
       minRows: 1,
+      maxRows: 4,
       fields: [
         {
           type: 'number',
           name: 'donationOption',
           label: 'Donation Option',
         },
+        link,
       ],
       required: true,
     },
