@@ -3,11 +3,14 @@ import { Grid, Cell } from '@faceless-ui/css-grid';
 import GridContainer from '../../components/layout/GridContainer';
 import PolygonThree from '../../components/graphics/Polygons/PolygonThree';
 import PolygonFour from '../../components/graphics/Polygons/PolygonFour';
+import { Type as LinkType } from '../../fields/link';
+import CMSLink from '../../components/Link';
 import colors from '../../css/colors';
 import useStyles from './css';
 
 export type DonationOption = {
   donationOption: number;
+  link: LinkType;
 }
 
 export type Type = {
@@ -19,7 +22,7 @@ export type Type = {
 
 export const Component: React.FC<Type> = ({ cta, donationOptions }) => {
   const classes = useStyles();
-console.log('donation options', donationOptions);
+
   return (
     <Fragment>
       <div className={classes.wrap}>
@@ -48,21 +51,48 @@ console.log('donation options', donationOptions);
               className={classes.optionsWrapper}
             >
               {
-                donationOptions && donationOptions.map((opt, idx) => (
-                  <div
-                    key={opt.donationOption + idx}
-                    className={classes.donationOpt}
-                  >
-                    <h3 className={classes.donationAmount}>
-                      $
-                      {opt.donationOption}
-                    </h3>
-                    <PolygonFour
-                      fillColor={colors.yellow}
-                      className={classes.optPolygon}
-                    />
-                  </div>
-                ))
+                donationOptions && donationOptions.map((opt, idx) => {
+                  if (opt.link.type === 'custom') {
+                    return (
+                      <CMSLink
+                        key={opt.donationOption + idx}
+                        type="custom"
+                        url={opt.link.url}
+                        label="donationOption"
+                        className={classes.donationOpt}
+                      >
+                        <h3 className={classes.donationAmount}>
+                          $
+                          {opt.donationOption}
+                        </h3>
+                        <PolygonFour
+                          fillColor={colors.yellow}
+                          className={classes.optPolygon}
+                        />
+                      </CMSLink>
+                    );
+                  }
+
+                  return (
+                    <CMSLink
+                      key={opt.donationOption + idx}
+                      type="page"
+                      page={opt.link.page}
+                      url={opt.link.url}
+                      label="donationOption"
+                      className={classes.donationOpt}
+                    >
+                      <h3 className={classes.donationAmount}>
+                        $
+                        {opt.donationOption}
+                      </h3>
+                      <PolygonFour
+                        fillColor={colors.yellow}
+                        className={classes.optPolygon}
+                      />
+                    </CMSLink>
+                  );
+                })
               }
             </Cell>
           </Grid>
