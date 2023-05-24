@@ -3,21 +3,24 @@ import { Grid, Cell } from '@faceless-ui/css-grid';
 import useStyles from './css';
 import { Type as FooterType } from '../../../globals/Footer';
 import { Type as SocialMediaType } from '../../../globals/SocialMedia';
+import { Type as LegalType } from '../../../globals/Legal';
 import GridContainer from '../GridContainer';
 import Arrow from '../../graphics/Arrow';
 
 type Props = {
   footer: FooterType;
   socialMedia: SocialMediaType;
+  legal: LegalType;
 }
 
-const Footer: React.FC<Props> = ({ footer, socialMedia }) => {
+const Footer: React.FC<Props> = ({ footer, socialMedia, legal }) => {
   const classes = useStyles();
 
   const backToTop = useCallback(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  console.log('legal data:', legal);
   console.log('footer data:', footer);
   console.log('social media data:', socialMedia);
 
@@ -25,6 +28,20 @@ const Footer: React.FC<Props> = ({ footer, socialMedia }) => {
     <footer className={classes.footer}>
       <GridContainer>
         <Grid>
+          {
+            footer.displayDisclaimer === 'yes' && (
+              <Cell
+                cols={12}
+                colsM={8}
+              >
+                <div className={classes.disclaimerWrapper}>
+                  <h6 className={classes.disclaimer}>
+                    {legal.disclaimer}
+                  </h6>
+                </div>
+              </Cell>
+            )
+          }
           {
             (Array.isArray(footer?.nav) && footer.nav.length) > 0 && (
               <Cell
