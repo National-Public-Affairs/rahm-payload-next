@@ -21,9 +21,13 @@ export const h1 = {
   [queries.m]: {
     fontSize: base(6),
   },
+  [queries.s]: {
+    fontSize: base(4),
+    lineHeight: base(3),
+  },
   [queries.xs]: {
-    fontSize: base(3.5),
-    lineHeight: base(2.5),
+    fontSize: base(3),
+    lineHeight: base(2),
   },
 };
 
@@ -39,6 +43,18 @@ export const h3 = {
   fontSize: base(3.5),
   lineHeight: base(4),
   margin: `${base(2)} 0 ${base(1.5)}`,
+  [queries.m]: {
+    fontSize: base(3),
+    lineHeight: base(2),
+  },
+  [queries.s]: {
+    fontSize: base(2.5),
+    lineHeight: base(1.5),
+  },
+  [queries.xs]: {
+    fontSize: base(2),
+    lineHeight: base(0.85),
+  },
 };
 
 export const h4 = {
