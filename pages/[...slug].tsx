@@ -20,7 +20,7 @@ export type Props = {
 
 const Page: React.FC<Props> = (props) => {
   const { page, footer, socialMedia } = props;
-  console.log('page data', page);
+  console.log('page data', props);
   if (!page) {
     return <NotFound />;
   }
