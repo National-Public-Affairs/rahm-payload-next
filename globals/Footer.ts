@@ -4,7 +4,7 @@ import link, { Type as LinkType } from '../fields/link';
 export type Type = {
   nav: {
     link: LinkType
-  }[]
+  }[];
 }
 
 const Footer: GlobalConfig = {
