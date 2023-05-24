@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
 import { htmlFontSize, baselinePX, base } from './base';
 import colors from './colors';
-import { h1, h2, h3, h4, h5, body } from './type';
+import { h1, h2, h3, h4, h5, h6, body } from './type';
 import queries from './queries';
 import { headerHeight } from './sizes';
 
@@ -28,6 +28,7 @@ export default createUseStyles({
     h3,
     h4,
     h5,
+    h6,
     p: {
       ...body,
     },

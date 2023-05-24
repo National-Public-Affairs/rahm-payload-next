@@ -71,6 +71,12 @@ export const h5 = {
   margin: `${base(1)} 0 ${base(0.5)}`,
 };
 
+export const h6 = {
+  ...headingWeight,
+  fontSize: base(1.25),
+  lineHeight: base(0.95),
+};
+
 export const body = {
   ...bodyWeight,
   fontSize: htmlFontSize,
