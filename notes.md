@@ -51,3 +51,4 @@ Figure out what's going on with the Media and preferred sizes, etc.
 - [ ] Set up broswer API for elements that are currently within the viewport
 - [ ] Deal with image sizing with props, etc.
 - [x] Figure out why the spacer block isn't working/saving correctly
+- [ ] Figure out why the legal globals are showing up in ...slug props
