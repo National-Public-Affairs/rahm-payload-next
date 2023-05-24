@@ -5,6 +5,10 @@ export type Type = {
   nav: {
     link: LinkType
   }[];
+  displayAddress: 'yes' | 'no';
+  displayCopyright: 'yes' | 'no';
+  displayDisclaimer: 'yes' | 'no';
+  displaySocial: 'yes' | 'no';
 }
 
 const Footer: GlobalConfig = {
