@@ -12,13 +12,13 @@ const Legal: GlobalConfig = {
   fields: [
     {
       type: 'textarea',
-      name: 'address',
-      label: 'Address',
+      name: 'disclaimer',
+      label: 'Disclaimer',
     },
     {
       type: 'textarea',
-      name: 'disclaimer',
-      label: 'Disclaimer',
+      name: 'address',
+      label: 'Address',
     },
     {
       type: 'text',
