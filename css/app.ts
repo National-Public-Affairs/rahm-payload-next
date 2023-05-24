@@ -10,6 +10,7 @@ export default createUseStyles({
     'html, body': {
       margin: 0,
       color: colors.yellow,
+      scrollBehavior: 'smooth',
     },
     '*': {
       boxSizing: 'border-box',

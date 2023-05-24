@@ -3,6 +3,7 @@ import { base } from '../../../css/base';
 import colors from '../../../css/colors';
 import queries from '../../../css/queries';
 import transitions from '../../../css/transitions';
+import { strokeWidth } from '../../../css/sizes';
 
 export default createUseStyles({
   footer: {
@@ -106,12 +107,13 @@ export default createUseStyles({
     zIndex: 3,
     right: base(2),
     bottom: base(2),
+    padding: base(),
     border: 0,
-    backgrond: 'none',
+    borderRadius: '100%',
+    background: colors.darkPurple,
     boxShadow: 'none',
-    transition: `opacity ${transitions.default}ms linear`,
+    transition: `all ${transitions.default}ms linear`,
     cursor: 'pointer',
-    padding: 0,
     '&:active': {
       outline: 0,
     },
@@ -119,13 +121,15 @@ export default createUseStyles({
       outline: 0,
     },
     '&:hover': {
-      opacity: 0.5,
+      opacity: 0.95,
+      boxShadow: `inset 0 0 0 ${strokeWidth} ${colors.white}`,
     },
     [queries.m]: {
       display: 'none',
     },
   },
   backToTopArrow: {
+    height: base(3),
     transform: 'rotate(-90deg)',
   },
 });

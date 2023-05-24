@@ -143,7 +143,10 @@ const Footer: React.FC<Props> = ({ footer, socialMedia, legal }) => {
         onClick={backToTop}
         className={classes.backToTop}
       >
-        <Arrow className={classes.backToTopArrow} />
+        <Arrow
+          className={classes.backToTopArrow}
+          color="white"
+        />
       </button>
     </footer>
   );

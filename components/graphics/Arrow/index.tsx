@@ -18,7 +18,7 @@ const Arrow: React.FC<{ color?: Color, className?: string }> = ({ color = 'gray'
         d="M2.45898 30.95L57.6507 30.95M57.6507 30.95L48.7007 22M57.6507 30.95L48.7007 39.9"
         strokeWidth="2"
         strokeMiterlimit="16"
-        strokeLinecap="square"
+        strokeLinecap="round"
         className={classes.path}
       />
     </svg>
