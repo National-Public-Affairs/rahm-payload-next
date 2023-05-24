@@ -38,6 +38,14 @@ Figure out what's going on with the Media and preferred sizes, etc.
   - Bring block into collection (i.e. Page collection)
   - Add block to RenderBlocks index component
 
+# Adding New Globals
+---------------------------
+## File Path:
+```
+_app.tsx > [...slug].tsx > Template > Footer
+```
+
+
 # Rich Text Editor Customization
 ---------------------------
 - Button is in regards to the button in the toolbar of the editor
