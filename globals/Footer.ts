@@ -23,6 +23,7 @@ const Footer: GlobalConfig = {
       type: 'radio',
       name: 'displayDisclaimer',
       label: 'Display disclaimer?',
+      defaultValue: 'yes',
       options: [
         {
           value: 'yes',
@@ -38,6 +39,7 @@ const Footer: GlobalConfig = {
       type: 'radio',
       name: 'displayAddress',
       label: 'Display organization address?',
+      defaultValue: 'yes',
       options: [
         {
           value: 'yes',
@@ -57,6 +59,7 @@ const Footer: GlobalConfig = {
         singular: 'Link',
         plural: 'Links',
       },
+      maxRows: 5,
       fields: [
         link,
       ],
@@ -65,6 +68,7 @@ const Footer: GlobalConfig = {
       type: 'radio',
       name: 'displaySocial',
       label: 'Display social links?',
+      defaultValue: 'no',
       options: [
         {
           value: 'yes',
@@ -80,6 +84,7 @@ const Footer: GlobalConfig = {
       type: 'radio',
       name: 'displayCopyright',
       label: 'Display copyright?',
+      defaultValue: 'yes',
       options: [
         {
           value: 'yes',
