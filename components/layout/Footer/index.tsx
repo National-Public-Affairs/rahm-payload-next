@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useCallback } from 'react';
 import { Grid, Cell } from '@faceless-ui/css-grid';
 import useStyles from './css';
@@ -6,6 +8,9 @@ import { Type as SocialMediaType } from '../../../globals/SocialMedia';
 import { Type as LegalType } from '../../../globals/Legal';
 import GridContainer from '../GridContainer';
 import Arrow from '../../graphics/Arrow';
+import CMSLink from '../../Link';
+import PolygonFive from '../../graphics/Polygons/PolygonFive';
+import colors from '../../../css/colors';
 
 type Props = {
   footer: FooterType;
@@ -28,66 +33,109 @@ const Footer: React.FC<Props> = ({ footer, socialMedia, legal }) => {
     <footer className={classes.footer}>
       <GridContainer>
         <Grid>
-          {
-            footer.displayDisclaimer === 'yes' && (
-              <Cell
-                cols={12}
-                colsM={8}
-              >
+          <Cell
+            cols={12}
+            colsM={8}
+          >
+            {/* disclaimer */}
+            {
+              footer.displayCopyright === 'yes' && (
                 <div className={classes.disclaimerWrapper}>
                   <h6 className={classes.disclaimer}>
                     {legal.disclaimer}
                   </h6>
                 </div>
-              </Cell>
-            )
-          }
+              )
+            }
+            {/* org address */}
+            {
+              footer.displayAddress === 'yes' && (
+                <div className={classes.addressWrapper}>
+                  <p className={classes.address}>
+                    {legal.address}
+                  </p>
+                </div>
+              )
+            }
+          </Cell>
+          {/* nav options */}
           {
             (Array.isArray(footer?.nav) && footer.nav.length) > 0 && (
               <Cell
-                cols={6}
+                cols={12}
                 colsM={8}
-                htmlElement="ul"
                 className={classes.nav}
               >
                 {
-                  footer.nav.map(({ link }) => (
-                    <li key={link.label}>
-                      {link.label}
-                    </li>
-                  ))
+                  footer.nav.map(({ link }) => {
+                    if (link.type === 'custom') {
+                      return (
+                        <CMSLink
+                          key={link.label}
+                          type="custom"
+                          url={link.url}
+                          label="footerNavOption"
+                          className={classes.navLink}
+                        >
+                          <h4
+                            className={classes.navOption}
+                            onClick={backToTop}
+                          >
+                            {link.label}
+                          </h4>
+                          <PolygonFive
+                            fillColor={colors.darkPurple}
+                            className={classes.optPolygon}
+                          />
+                        </CMSLink>
+                      );
+                    }
+
+                    return (
+                      <CMSLink
+                        key={link.label}
+                        type="page"
+                        page={link.page}
+                        url={link.url}
+                        label="footerNavOption"
+                        className={classes.navLink}
+                      >
+                        <h4
+                          onClick={backToTop}
+                          className={classes.navOption}
+                        >
+                          {link.label}
+                        </h4>
+                        <PolygonFive
+                          fillColor={colors.darkPurple}
+                          className={classes.optPolygon}
+                        />
+                      </CMSLink>
+                    );
+                  })
                 }
               </Cell>
             )
           }
-          <Cell
-            cols={6}
-            colsM={8}
-          >
-            <div className={classes.section}>
-              <ul className={classes.social}>
-                {socialMedia?.links?.map(({ url, label }) => (
-                  <li key={label}>
-                    <a
-                      className={classes.link}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <p className={classes.copyright}>
-                &copy;
-                {' '}
-                {new Date().getFullYear()}
-                {' '}
-                Custom Website Series
-              </p>
-            </div>
-          </Cell>
+          {/* copyright */}
+          {
+            footer.displayCopyright === 'yes' && (
+              <Cell
+                cols={12}
+                colsM={8}
+              >
+                <div className={classes.copyrightWrapper}>
+                  <p className={classes.copyright}>
+                    &copy;
+                    {' '}
+                    {new Date().getFullYear()}
+                    {' '}
+                    {legal.copyright}
+                  </p>
+                </div>
+              </Cell>
+            )
+          }
         </Grid>
       </GridContainer>
       <button
