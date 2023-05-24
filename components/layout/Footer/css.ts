@@ -11,6 +11,21 @@ export default createUseStyles({
     marginTop: base(8),
     background: colors.purple,
   },
+  disclaimerWrapper: {
+    margin: base(),
+    display: 'grid',
+    gridTemplate: '100% / 100%',
+    textAlign: 'center',
+  },
+  disclaimer: {
+    gridColumn: 1,
+    gridRow: 1,
+    justifySelf: 'center',
+    alignSelf: 'center',
+    margin: 0,
+    padding: `${base(0.5)} ${base()}`,
+    border: `1px solid ${colors.yellow}`,
+  },
   nav: {
     margin: 0,
     padding: 0,
