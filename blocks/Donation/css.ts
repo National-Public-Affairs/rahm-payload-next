@@ -3,6 +3,7 @@ import { label } from '../../css/type';
 import { fadeInUp } from '../../components/layout/PageHero/css';
 import colors from '../../css/colors';
 import { base } from '../../css/base';
+import queries from '../../css/queries';
 
 export default createUseStyles({
   '@keyframes fade-in-up': {
@@ -31,11 +32,16 @@ export default createUseStyles({
     justifyContent: 'center',
     gap: base(3),
     color: colors.white,
+    [queries.xs]: {
+      flexFlow: 'row wrap',
+    },
   },
   donationOpt: {
     display: 'grid',
     gridTemplate: '100% / 100%',
     minWidth: base(5.5),
+    textDecoration: 'none',
+    color: colors.white,
   },
   donationAmount: {
     position: 'relative',
@@ -72,5 +78,11 @@ export default createUseStyles({
     alignSelf: 'center',
     zIndex: 20,
     height: '175%',
+    [queries.l]: {
+      height: '100%',
+    },
+    [queries.s]: {
+      height: '50%',
+    },
   },
 });
