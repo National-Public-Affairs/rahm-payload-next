@@ -9,6 +9,7 @@ import Template from '../components/layout/Template';
 import PageHero from '../components/layout/PageHero';
 import { Type as FooterType } from '../globals/Footer';
 import { Type as SocialMediaType } from '../globals/SocialMedia';
+import { Type as LegalType } from '../globals/Legal';
 
 
 export type Props = {
@@ -16,10 +17,12 @@ export type Props = {
   statusCode: number;
   footer: FooterType;
   socialMedia: SocialMediaType;
+  legal: LegalType;
+
 }
 
 const Page: React.FC<Props> = (props) => {
-  const { page, footer, socialMedia } = props;
+  const { page, footer, socialMedia, legal } = props;
   console.log('page data', props);
   if (!page) {
     return <NotFound />;
@@ -29,6 +32,7 @@ const Page: React.FC<Props> = (props) => {
     <Template
       footer={footer}
       socialMedia={socialMedia}
+      legal={legal}
     >
       <Head
         title={page.meta?.title || page.title}

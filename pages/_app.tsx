@@ -11,20 +11,33 @@ import { base } from '../css/base';
 import { Type as MegaMenuType } from '../globals/MegaMenu';
 import { Type as FooterType } from '../globals/Footer';
 import { Type as SocialMediaType } from '../globals/SocialMedia';
+import { Type as LegalType } from '../globals/Legal';
 import '../css/style.css';
 
 type AppProps = {
   pageProps: unknown;
-  Component: React.FC<{ footer: FooterType, socialMedia: SocialMediaType }>
+  Component: React.FC<{
+    footer: FooterType,
+    socialMedia: SocialMediaType,
+    legal: LegalType,
+  }>
 } & {
   megaMenu: MegaMenuType
   footer: FooterType
   socialMedia: SocialMediaType
+  legal: LegalType;
 };
 
 const MyApp = (appProps: AppProps): React.ReactElement => {
   const classes = useStyles();
-  const { Component, pageProps, megaMenu, footer, socialMedia } = appProps;
+  const {
+    Component,
+    pageProps,
+    megaMenu,
+    footer,
+    socialMedia,
+    legal,
+  } = appProps;
 
   useEffect(() => {
     const style = document.getElementById('server-side-styles');
@@ -78,6 +91,7 @@ const MyApp = (appProps: AppProps): React.ReactElement => {
               {...pageProps}
               footer={footer}
               socialMedia={socialMedia}
+              legal={legal}
             />
           </div>
         </GridProvider>
@@ -90,10 +104,11 @@ const MyApp = (appProps: AppProps): React.ReactElement => {
 MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext);
 
-  const [megaMenu, footer, socialMedia] = await Promise.all([
+  const [megaMenu, footer, socialMedia, legal] = await Promise.all([
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/mega-menu`).then((res) => res.json()),
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/footer`).then((res) => res.json()),
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/social-media`).then((res) => res.json()),
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/globals/legal`).then((res) => res.json()),
   ]);
 
   return {
@@ -101,6 +116,7 @@ MyApp.getInitialProps = async (appContext) => {
     megaMenu,
     footer,
     socialMedia,
+    legal,
   };
 };
 

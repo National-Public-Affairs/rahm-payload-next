@@ -9,6 +9,10 @@ export type Type = {
 const Legal: GlobalConfig = {
   slug: 'legal',
   label: 'Legal',
+  access: {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    read: () => true,
+  },
   fields: [
     {
       type: 'textarea',
